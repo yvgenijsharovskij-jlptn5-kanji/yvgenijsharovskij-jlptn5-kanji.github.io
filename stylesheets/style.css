@@ -1,0 +1,82 @@
+/* transition elements: common*/
+/* line 22, ../sass/style.scss */
+.kanji-box:hover,
+.kanji-box .kanji,
+.kanji-box .hatsuon {
+  transition: all 1s;
+}
+
+/* line 28, ../sass/style.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 32, ../sass/style.scss */
+body {
+  font-size: 100%;
+  font-family: "Ubuntu", sans-serif;
+  color: #222;
+  background-color: #F2F2F2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* line 43, ../sass/style.scss */
+a {
+  color: #7b7b7b;
+  text-decoration: none;
+}
+/* line 49, ../sass/style.scss */
+a:hover {
+  color: #aeaeae;
+}
+
+/* line 60, ../sass/style.scss */
+.kanji-box {
+  width: 160px;
+  height: 180px;
+  background-color: rgba(146, 153, 156, 0.6);
+  border: 1px solid #92999C;
+  cursor: default;
+}
+/* line 67, ../sass/style.scss */
+.kanji-box:hover {
+  border: 1px solid #5f6669;
+  background-color: rgba(146, 153, 156, 0.85);
+  box-shadow: 0px 0px 8px rgba(146, 153, 156, 0.7);
+  text-shadow: 0 0 10px rgba(242, 242, 242, 0.5);
+}
+/* line 74, ../sass/style.scss */
+.kanji-box .kanji {
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  left: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #e5e5e5;
+}
+/* line 85, ../sass/style.scss */
+.kanji-box .hatsuon {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  font-size: 26px;
+  color: #d9d9d9;
+}
+
+/* line 98, ../sass/style.scss */
+.footer-container {
+  position: absolute;
+  height: 20px;
+  bottom: 0px;
+  width: 100%;
+}
+/* line 105, ../sass/style.scss */
+.footer-container .footer-copy {
+  font-size: 80%;
+  text-align: right;
+  padding-right: 10px;
+  color: #7b7b7b;
+}
