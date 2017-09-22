@@ -1,0 +1,116 @@
+// ====================================================================================================================
+// imports  
+// ====================================================================================================================
+
+@import "compass"; 					// http://compass-style.org/  
+
+@import 'partials/variables'; 	// font, colors, etc.
+
+@import 'partials/mixins'; 		// general mixins
+   
+
+
+// ====================================================================================================================
+//  common
+// ====================================================================================================================
+
+/* transition elements: common*/
+//* // all elements
+//h1, 
+//h2, 
+//h3, 
+.kanji-box:hover,
+.kanji-box .kanji,
+.kanji-box .hatsuon { 
+	transition: all 1s;
+}
+
+html, body{
+  height: 100%; 
+}
+
+body {
+	font: {
+		size: 100%;
+		family: $main-font; 
+	}
+	color: $text-color; 
+	background-color: $body-bg-color;
+	@include font-smoothing;
+	overflow: hidden;
+}
+
+a {
+	color: lighten($text-color, 35%); 
+	text-decoration: none;
+//	text-decoration-color: black;												 // moz only
+//	-webkit-tap-highlight-color: lighten($color-5, 15%); 		// moz only, non-standard
+
+	&:hover {
+		color: lighten($text-color, 55%); 
+//		text-decoration-color: lighten($text-color, 15%); 								 // moz only
+	}
+}
+
+
+// ====================================================================================================================
+//  main
+// ====================================================================================================================
+
+.kanji-box {
+	width: 160px;
+	height: 180px;
+	background-color: rgba($color-6, .6);
+	border: 1px solid $color-6;
+	cursor: default;
+	
+	&:hover {
+		border: 1px solid darken($color-6, 20%);
+		background-color: rgba($color-6, .85);
+		box-shadow: 0px 0px 8px rgba($color-6, .7);
+		text-shadow: 0 0 10px rgba($color-5, 0.5);
+	}
+	
+	.kanji {
+		position: absolute;
+		text-align: center;
+		top: 20px;
+		left: 40px;
+		font-size: 60px;
+		font-weight: bold;
+		color: darken($color-5, 5%);
+//		text-shadow: 0 0 10px rgba($color-5, 0.95);
+	}
+	
+	.hatsuon {
+		position: absolute;
+		bottom: 10px;
+		left: 0px;
+		font-size: 26px;
+		color: darken($color-5, 10%);
+	}
+}
+
+// ====================================================================================================================
+//  footer
+// ====================================================================================================================
+
+.footer-container {
+	position: absolute;
+//  	background: $footer-bg;
+  	height: $footer-height; 
+	bottom: 0px;
+	width: 100%;	
+	
+	.footer-copy {
+		font-size: 80%;
+		text-align: right;
+		padding-right: 10px;
+		color: lighten($text-color, 35%); 
+	}
+}
+
+
+
+
+
