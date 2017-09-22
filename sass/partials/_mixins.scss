@@ -1,0 +1,104 @@
+// ====================================================================================================================
+//  px to rem conversion and rem font size
+// ====================================================================================================================
+
+@function getRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size: 16) {	// default font-size: 16px
+	font-size: $size;			// px fall-back
+	font-size: getRem($size);
+}
+
+
+// ====================================================================================================================
+//  centering
+// ====================================================================================================================
+ 
+@mixin center($offset, $trans, $xy:xy) {
+	@if $xy == xy {
+		left: $offset;
+		top: $offset;
+    	bottom: auto;
+    	right: auto;
+		transform: translateX($trans) translateY($trans);
+  	} @else if $xy == x {
+    	left: $offset;
+    	right: auto;
+    	transform: translateX($trans);
+  	} @else if $xy == y {
+    	top: $offset;
+    	bottom: auto;
+    	transform: translateY($trans);
+  	}
+}
+
+
+// ====================================================================================================================
+//  font antialiasing
+//
+// note: this also helps with thin fonts when using 'backface-visibility: hidden'
+// ====================================================================================================================
+
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+// ====================================================================================================================
+//  show overflow with an elipsis
+//
+//  note: have to be displayed as block or inline-block
+// ====================================================================================================================
+
+@mixin overflow-elipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+// ====================================================================================================================
+//  border radius with background cliping
+// ====================================================================================================================
+
+@mixin border-clip($radius: .25em) {
+	border-radius: $radius;
+	background-clip: padding-box;		// specifies the painting area of the background to be clipped to the padding box
+}
+ 
+
+// ====================================================================================================================
+//  opacity with alpha filter fallback
+// ====================================================================================================================
+
+//@mixin opacity($opacity) {
+//  opacity: $opacity;
+//  $opacity-ie: $opacity*100;
+//  filter: alpha(opacity=$opacity-ie); // alpha filter fallback for legacy IE
+//}
+
+// ====================================================================================================================
+//  line-height as rem with px fallback
+// ====================================================================================================================
+
+//@mixin line-height($heightValue: 12 ){
+//    line-height: $heightValue + px; 	// px fallback
+//    line-height: (0.125 * $heightValue) + rem;
+//}
+
+
+// ====================================================================================================================
+//  clearfix
+// ====================================================================================================================
+ 
+@mixin clearfix {
+	&::after {
+    	clear: both;
+    	content: "";
+    	display: block;
+  	}
+}
